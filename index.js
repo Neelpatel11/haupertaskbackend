@@ -47,7 +47,7 @@ app.post('/users', async (req, res) => {
     try {
       const existingUser = await User.findOne({ email });
       if (existingUser) {
-        return res.status(400).json({ error: 'Email already exists' });
+        return res.status().json({ error: 'Email already exists' });
       }
   
       const user = new User({ name, email, mobile });
